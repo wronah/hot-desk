@@ -11,6 +11,11 @@ namespace HotDesk.Api.Persistence.HotDesk.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
+            builder.Property(x => x.AddDate).HasColumnType("timestamp without time zone");
+            builder.Property(x => x.RemoveDate).HasColumnType("timestamp without time zone");
+            builder.Property(x => x.StartReservationDate).HasColumnType("timestamp without time zone");
+            builder.Property(x => x.EndReservationDate).HasColumnType("timestamp without time zone");
+
             builder
                 .HasOne(x => x.Employee)
                 .WithOne(x => x.Desk)

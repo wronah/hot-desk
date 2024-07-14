@@ -47,11 +47,11 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AddDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without timezone")
                         .HasColumnName("add_date");
 
                     b.Property<DateTime>("EndReservationDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without timezone")
                         .HasColumnName("end_reservation_date");
 
                     b.Property<int?>("LocationId")
@@ -62,11 +62,11 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         .HasColumnName("location_id");
 
                     b.Property<DateTime>("RemoveDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without timezone")
                         .HasColumnName("remove_date");
 
                     b.Property<DateTime>("StartReservationDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without timezone")
                         .HasColumnName("start_reservation_date");
 
                     b.HasKey("Id");
@@ -121,7 +121,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AddDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without timezone")
                         .HasColumnName("add_date");
 
                     b.Property<string>("Name")
@@ -131,7 +131,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         .HasColumnName("name");
 
                     b.Property<DateTime>("RemoveDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp without timezone")
                         .HasColumnName("remove_date");
 
                     b.HasKey("Id");
