@@ -1,4 +1,5 @@
 ﻿using HotDesk.Api.UseCases.Desks.Commands.AddAndAssignDesk;
+using HotDesk.Api.UseCases.Desks.Commands.MakeDeskUnavailable;
 using HotDesk.Api.UseCases.Desks.Commands.RemoveDesk;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -29,6 +30,14 @@ namespace HotDesk.Api.Controllers
         public async Task<ActionResult> RemoveDesk(int id, CancellationToken cancellationToken)
         {
             var command = new RemoveDeskUseCase.Command(id);
+            await mediator.Send(command, cancellationToken);
+            return Ok();
+        }
+
+        [HttpPut("make-unavailable/{id}")]
+        public async Task<ActionResult> MakeDeskUnavailable(int id, CancellationToken cancellationToken)
+        {
+            var command = new MakeDeskUnavailableUseCase.Command(id);
             await mediator.Send(command, cancellationToken);
             return Ok();
         }
