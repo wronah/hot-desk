@@ -86,7 +86,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     first_name = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: false),
                     last_name = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: false),
-                    desk_id = table.Column<int>(type: "integer", nullable: false)
+                    desk_id = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -96,8 +96,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         column: x => x.desk_id,
                         principalSchema: "public",
                         principalTable: "desks",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(

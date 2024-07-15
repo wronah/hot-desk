@@ -12,7 +12,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Entities
         [Column("last_name")]
         public string LastName { get; set; } = string.Empty;
         [Column("desk_id")]
-        public int DesksId { get; set; }
+        public int? DesksId { get; set; }
 
         public Desk? Desk { get; set; }
         public List<Role>? Roles { get; set; }
