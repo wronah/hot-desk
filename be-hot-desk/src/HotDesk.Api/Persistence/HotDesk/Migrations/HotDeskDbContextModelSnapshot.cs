@@ -55,9 +55,6 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         .HasColumnName("end_reservation_date");
 
                     b.Property<int?>("LocationId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("LocationsId")
                         .HasColumnType("integer")
                         .HasColumnName("location_id");
 
@@ -77,8 +74,6 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
 
                     b.HasIndex("LocationId");
 
-                    b.HasIndex("LocationsId");
-
                     b.ToTable("desks", "public");
                 });
 
@@ -91,7 +86,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("DesksId")
+                    b.Property<int?>("DeskId")
                         .HasColumnType("integer")
                         .HasColumnName("desk_id");
 
@@ -109,7 +104,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DesksId")
+                    b.HasIndex("DeskId")
                         .IsUnique();
 
                     b.ToTable("employees", "public");
@@ -181,14 +176,8 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
             modelBuilder.Entity("HotDesk.Api.Persistence.HotDesk.Entities.Desk", b =>
                 {
                     b.HasOne("HotDesk.Api.Persistence.HotDesk.Entities.Location", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationId");
-
-                    b.HasOne("HotDesk.Api.Persistence.HotDesk.Entities.Location", null)
                         .WithMany("Desks")
-                        .HasForeignKey("LocationsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LocationId");
 
                     b.Navigation("Location");
                 });
@@ -197,7 +186,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                 {
                     b.HasOne("HotDesk.Api.Persistence.HotDesk.Entities.Desk", "Desk")
                         .WithOne("Employee")
-                        .HasForeignKey("HotDesk.Api.Persistence.HotDesk.Entities.Employee", "DesksId");
+                        .HasForeignKey("HotDesk.Api.Persistence.HotDesk.Entities.Employee", "DeskId");
 
                     b.Navigation("Desk");
                 });

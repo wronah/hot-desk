@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="UseCases\Desks\Queries\" />
     <Folder Include="UseCases\Locations\Queries\" />
   </ItemGroup>
 

@@ -14,7 +14,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Configurations
             builder
                 .HasOne(x => x.Employee)
                 .WithOne(x => x.Desk)
-                .HasForeignKey<Employee>(x => x.DesksId);
+                .HasForeignKey<Employee>(x => x.DeskId);
         }
     }
 }

@@ -57,25 +57,17 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                     remove_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     start_reservation_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     end_reservation_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    location_id = table.Column<int>(type: "integer", nullable: false),
-                    LocationId = table.Column<int>(type: "integer", nullable: true)
+                    location_id = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_desks", x => x.id);
                     table.ForeignKey(
-                        name: "FK_desks_locations_LocationId",
-                        column: x => x.LocationId,
-                        principalSchema: "public",
-                        principalTable: "locations",
-                        principalColumn: "id");
-                    table.ForeignKey(
                         name: "FK_desks_locations_location_id",
                         column: x => x.location_id,
                         principalSchema: "public",
                         principalTable: "locations",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -132,12 +124,6 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                 schema: "public",
                 table: "desks",
                 column: "location_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_desks_LocationId",
-                schema: "public",
-                table: "desks",
-                column: "LocationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_employee_roles_RolesId",

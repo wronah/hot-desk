@@ -19,7 +19,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Entities
         [Column("end_reservation_date")]
         public DateTime? EndReservationDate { get; set; }
         [Column("location_id")]
-        public int LocationsId { get; set; }
+        public int? LocationId { get; set; }
 
         public Location? Location { get; set; }
         public Employee? Employee { get; set; }

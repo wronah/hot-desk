@@ -14,8 +14,8 @@ namespace HotDesk.Api.Persistence.HotDesk.Configurations
             builder.Property(x => x.Name).HasMaxLength(256);
             builder
                 .HasMany(x => x.Desks)
-                .WithOne()
-                .HasForeignKey(x => x.LocationsId);
+                .WithOne(x => x.Location)
+                .HasForeignKey(x => x.LocationId);
         }
     }
 }
