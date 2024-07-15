@@ -23,8 +23,8 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: false),
-                    add_date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    remove_date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                    add_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    remove_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,10 +52,11 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    add_date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    remove_date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    start_reservation_date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    end_reservation_date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    status = table.Column<int>(type: "integer", nullable: false),
+                    add_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    remove_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    start_reservation_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    end_reservation_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     location_id = table.Column<int>(type: "integer", nullable: false),
                     LocationId = table.Column<int>(type: "integer", nullable: true)
                 },

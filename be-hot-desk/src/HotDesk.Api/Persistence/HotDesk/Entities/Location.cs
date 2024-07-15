@@ -12,7 +12,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Entities
         [Column("add_date")]
         public DateTime AddDate { get; set; }
         [Column("remove_date")]
-        public DateTime RemoveDate { get; set; }
+        public DateTime? RemoveDate { get; set; }
 
         public List<Desk>? Desks { get; set; }
     }

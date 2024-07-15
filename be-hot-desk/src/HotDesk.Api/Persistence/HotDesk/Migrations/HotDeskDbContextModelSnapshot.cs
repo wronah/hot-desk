@@ -47,11 +47,11 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AddDate")
-                        .HasColumnType("timestamp without time zone")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("add_date");
 
-                    b.Property<DateTime>("EndReservationDate")
-                        .HasColumnType("timestamp without time zone")
+                    b.Property<DateTime?>("EndReservationDate")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("end_reservation_date");
 
                     b.Property<int?>("LocationId")
@@ -61,13 +61,17 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("location_id");
 
-                    b.Property<DateTime>("RemoveDate")
-                        .HasColumnType("timestamp without time zone")
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("remove_date");
 
-                    b.Property<DateTime>("StartReservationDate")
-                        .HasColumnType("timestamp without time zone")
+                    b.Property<DateTime?>("StartReservationDate")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("start_reservation_date");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer")
+                        .HasColumnName("status");
 
                     b.HasKey("Id");
 
@@ -121,7 +125,7 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AddDate")
-                        .HasColumnType("timestamp without time zone")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("add_date");
 
                     b.Property<string>("Name")
@@ -130,8 +134,8 @@ namespace HotDesk.Api.Persistence.HotDesk.Migrations
                         .HasColumnType("character varying(256)")
                         .HasColumnName("name");
 
-                    b.Property<DateTime>("RemoveDate")
-                        .HasColumnType("timestamp without time zone")
+                    b.Property<DateTime?>("RemoveDate")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("remove_date");
 
                     b.HasKey("Id");

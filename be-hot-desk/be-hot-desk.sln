@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotDesk.Api", "src\HotDesk.Api\HotDesk.Api.csproj", "{65B17990-94CE-4FD6-AF9A-5BE27584FBA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotDesk.Tests", "HotDesk.Tests\HotDesk.Tests.csproj", "{694D7136-037C-469E-BACF-9491D16044DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{65B17990-94CE-4FD6-AF9A-5BE27584FBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B17990-94CE-4FD6-AF9A-5BE27584FBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B17990-94CE-4FD6-AF9A-5BE27584FBA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694D7136-037C-469E-BACF-9491D16044DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694D7136-037C-469E-BACF-9491D16044DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694D7136-037C-469E-BACF-9491D16044DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694D7136-037C-469E-BACF-9491D16044DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
