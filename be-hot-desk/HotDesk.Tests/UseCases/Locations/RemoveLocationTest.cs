@@ -80,7 +80,8 @@ namespace HotDesk.Tests.UseCases.Locations
             // Act
             await mediator.Send(command);
             // Assert
-            Assert.Empty(repository.Locations);
+            var dbLocation = Assert.Single(repository.Locations);
+            Assert.NotNull(dbLocation.RemoveDate);
         }
     }
 }

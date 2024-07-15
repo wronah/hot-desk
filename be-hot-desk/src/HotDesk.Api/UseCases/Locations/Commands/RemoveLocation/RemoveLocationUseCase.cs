@@ -28,7 +28,7 @@ namespace HotDesk.Api.UseCases.Locations.Commands.RemoveLocation
                 {
                     throw new Exception("Cannot remove the location if it has desks assigned");
                 }
-                repository.Locations.Remove(location);
+                location.RemoveDate = DateTime.UtcNow;
                 await repository.SaveChangesAsync(cancellationToken);
             }
         }
