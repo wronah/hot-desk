@@ -1,2 +1,2 @@
 # hot-desk
-hot desk booking system
+This is my attempt of creating an app (starting with an API) which helps companies solve the problem of desk reservation in their offices.
