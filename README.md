@@ -3,3 +3,5 @@ This is my attempt of creating an app (starting with an API) which helps compani
 ## Roadmap
 - [x] Manage locations
 - [x] Manage desk in locations
+- [ ] Document API endpoints
+- [ ] Finish project
